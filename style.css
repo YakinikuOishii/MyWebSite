@@ -1,0 +1,370 @@
+@font-face {
+    font-family: "smartPhone";
+    src: url(03スマートフォントUI.otf);
+}
+
+* {
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    text-align: center;
+}
+
+.col-5 {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    
+/*
+    height: 150px;
+    background-color: rgba(200, 90, 18, 0.4);
+*/
+}
+
+.col-5 h1, h3{
+    position: absolute;
+    display: block;
+    text-align: center;
+}
+
+.col-5 img{
+/*    width: 28%;*/
+/*    height: 500px;*/
+}
+
+.col-4 {
+    width: 80%;
+    padding: 5px;
+    float: left;
+    overflow: hidden;
+    
+    height: 150px;
+    background-color: rgba(200, 80, 16, 0.4);
+    margin-bottom: 5px;
+    border: 1px solid black;
+}
+
+.col-3 {
+    width: 90%;
+/*    padding: 5px;*/
+    float: left;
+    overflow: hidden;
+    
+/*
+    height: 150px;
+    background-color: rgba(200, 70, 14, 0.4);
+    margin-bottom: 5px;
+    border: 1px solid black;
+*/
+}
+
+.col-2 {
+    width: 590px;
+    padding: 5px;
+    float: left;
+    overflow: hidden;
+    
+/*
+    height: 150px;
+    background-color: rgba(200, 60, 12, 0.4);
+    margin-bottom: 5px;
+    border: 1px solid black;
+*/
+}
+
+.col-1 {
+    width: 30%;
+/*    padding: 5px;*/
+    float: left;
+/*    overflow: hidden;*/
+    
+/*    height: 150px;*/
+/*    background-color: rgba(2200, 10, 2, 0.4);*/
+/*    margin-bottom: 5px;*/
+/*    border: 1px solid black;*/
+}
+
+.hero {
+    /* ヒーロー画像の設定です CSSから画像を呼び出します */
+    width: 100%;
+    height: 500px;
+  /* 画像を呼び出すための[パス]はこのcssファイルを基準に設定します */
+  /* background-image: url("images/polygon.png"); */
+    background: url(hero2.jpg) 0 0 / cover;
+/*    background-position: center center; */
+    /* opacity: 0.8;
+    display: none; */
+}
+
+.hero img{
+    display: none;
+/*    text-align:center;*/
+}
+
+.profile {
+    height: 500px;
+    background-color: #FFFAFA;
+}
+
+.intro {
+    width: 60%;
+    border: 3px double #424242;
+    height: 280px;
+    padding: 1%;
+    margin: 0 20%;
+}
+
+.intro p {
+    font-family: "smartPhone";
+    font-size: 20px;
+    color: #424242;
+    padding: 13% 0;
+    margin-left: 2%;
+/*    width: 30%;*/
+/*    margin: 8%;*/
+    text-align: left;
+}
+
+#profPic {
+    height: 100%;
+/*    padding: 2%;*/
+    object-fit: cover;
+    float: left;
+}
+
+/*.profText {*/
+/*    border: 1px solid;*/
+/*
+    font-family: "smartPhone";
+    font-size: 20px;
+     color: #424242;
+    width: 30%;
+    text-align: left;
+*/
+/*
+    padding: 10px;
+    margin-top: 81px;
+    margin-left: 15px;
+*/
+/*}*/
+
+.illust {
+    height: 650px;
+    background-color: #EEEEEE;
+}
+
+.collection {
+    float: left;
+    width: 60%;
+    height: 200px;
+    margin: 0 20%;
+    margin-bottom: 5%;
+/*    display: inline-block*/
+}
+
+.card-left {
+/*    width: 28%;*/
+    height: 200px;
+    text-align: left;
+}
+
+.card {
+/*    width: 28%;*/
+    height: 200px;
+    margin-left: 5%;
+    text-align: left;
+}
+
+.panel-item img{
+    width: 100%;
+    height: 150px;
+/*    margin-left: 30px;*/
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.panel-item-left img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.panel-item-left:hover img {
+    margin-left: -15%;
+    margin-right: -15%;
+    width: 130%;
+    height: 130%;
+    
+    transition: 0.5s ease;
+}
+
+.panel-item:hover img {
+    margin-left: -15%;
+    margin-right: -15%;
+    width: 130%;
+    height: 130%;
+    
+    transition: 0.5s ease;
+}
+
+
+.card p {
+    font-family: "Graphie";
+    font-size: 13px;
+/*    padding-left: 30px;*/
+    color: #757575;
+}
+
+.card h6 {
+    color: #424242;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/*
+#illustTitle {
+    margin-left: 30px;
+}
+*/
+
+#leftText {
+    padding: 0px;
+}
+
+/*
+#leftImg {
+    width: 280px;
+    height: 150px;
+    object-fit: cover;
+}
+
+#cardImg {
+    width: 280px;
+    height: 150px;
+    margin-left: 30px;
+    object-fit: cover;
+}
+*/
+
+
+.SNS {
+    background-color: #FFFAFA;
+/*    height: 100px;*/
+?/*    padding: 100px;*/
+}
+
+.SNSIcon {
+    width: 60%;
+    margin-top: 5px;
+    margin-bottom: 100px;
+    display: inline-block;
+/*    margin-top: 5px;*/
+}
+
+.SNSIconPadding {
+    margin-left: 5%;
+}
+
+.SNS img {
+    height: 110px;
+    width: 110px;
+}
+
+.SNS p {
+    font-family: "smartPhone";
+    margin-top: 10px;
+    color: #9E9E9E;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+a:hover p {
+    color: #424242;
+}
+
+h1 {
+    display: inline-block;
+    width: 440px;
+    font-size: 70px;
+    font-family: "Rift";
+    font-weight: 580;
+    letter-spacing: 5px;
+    padding-bottom: 5px;
+    color: #ffffff;
+    border-bottom: solid 4px #ffffff;
+    margin-top: 140px;
+}
+
+
+h2 {
+    margin: 50px;
+/*    margin-left: 105px;*/
+    font-family: "Rift";
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+
+h3 {
+    display: inline-block;
+    width: 97%;
+    font-family: "Santino";
+    font-size: 35px;
+    font-weight: 100;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+footer {
+    color: #fffafa;
+    background-color: #424242;
+}
+
+.description {
+    border: 1px solid #424242;
+    height: 414.31px;
+    margin: 300px;
+    margin-bottom: 0px;
+    margin-top: 50px;
+}
+
+.description img{
+    width: 280px;
+    height: auto;
+}
+
+.description h2 {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 3px;
+    text-align: left;
+    font-family: "Graphie";
+    font-weight: 900;
+    color: #424242;
+}
+
+.description p {
+    text-align: left;
+    font-family: "Graphie";
+    color: #9e9e9e;
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: "";
+    
+}
