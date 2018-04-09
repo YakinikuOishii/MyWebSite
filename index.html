@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>HARAMI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/xwd5aof.css">
+</head>
+<body>
+   
+    <div class="col-5 hero" id="polCanvas">
+       <!-- <h3>profile and illustration</h3>
+        <h1>MIKU KASAHARA</h1> -->
+        <img src="hero2_dark.jpg">
+        <script type="text/javascript">
+            var image = document.querySelector('img');
+            var imageCanvas = document.createElement('canvas');
+            var imageCanvasContext = imageCanvas.getContext('2d');
+            var lineCanvas = document.createElement('canvas');
+        var lineCanvasContext = lineCanvas.getContext('2d');
+        var pointLifetime = 1000;
+        var points = [];
+        
+        if (image.complete) {
+          start();
+        } else {
+          image.onload = start;
+        }
+        
+        /**
+         * Attaches event listeners and starts the effect.
+         */
+        function start() {
+          document.addEventListener('mousemove', onMouseMove);
+          window.addEventListener('resize', resizeCanvases);
+          var objTo = document.getElementById('polCanvas');
+          objTo.appendChild(imageCanvas);
+          resizeCanvases();
+          tick();
+        }
+        
+        /**
+         * Records the user's cursor position.
+         *
+         * @param {!MouseEvent} event
+         */
+        function onMouseMove(event) {
+          points.push({
+            time: Date.now(),
+            x: event.clientX,
+            y: event.clientY
+          });
+        }
+        
+        /**
+         * Resizes both canvases to fill the window.
+         */
+        function resizeCanvases() {
+          imageCanvas.width = lineCanvas.width = window.innerWidth;
+          imageCanvas.height = lineCanvas.height = window.innerHeight;
+        }
+        
+        /**
+         * The main loop, called at ~60hz.
+         */
+        function tick() {
+          // Remove old points
+          points = points.filter(function(point) {
+            var age = Date.now() - point.time;
+            return age < pointLifetime;
+          });
+        
+          drawLineCanvas();
+          drawImageCanvas();
+          requestAnimationFrame(tick);
+        }
+        
+        /**
+         * Draws a line using the recorded cursor positions.
+         *
+         * This line is used to mask the original image.
+         */
+        function drawLineCanvas() {
+          var minimumLineWidth = 25;
+          var maximumLineWidth = 100;
+          var lineWidthRange = maximumLineWidth - minimumLineWidth;
+          var maximumSpeed = 50;
+        
+          lineCanvasContext.clearRect(0, 0, lineCanvas.width, lineCanvas.height);
+          lineCanvasContext.lineCap = 'round';
+          lineCanvasContext.shadowBlur = 30;
+          lineCanvasContext.shadowColor = '#000';
+          
+          for (var i = 1; i < points.length; i++) {
+            var point = points[i];
+            var previousPoint = points[i - 1];
+        
+            // Change line width based on speed
+            var distance = getDistanceBetween(point, previousPoint);
+            var speed = Math.max(0, Math.min(maximumSpeed, distance));
+            var percentageLineWidth = (maximumSpeed - speed) / maximumSpeed;
+            lineCanvasContext.lineWidth = minimumLineWidth + percentageLineWidth * lineWidthRange;
+        
+            // Fade points as they age
+            var age = Date.now() - point.time;
+            var opacity = (pointLifetime - age) / pointLifetime;
+            lineCanvasContext.strokeStyle = 'rgba(0, 0, 0, 100)';
+            
+            lineCanvasContext.beginPath();
+            lineCanvasContext.moveTo(previousPoint.x, previousPoint.y);
+            lineCanvasContext.lineTo(point.x, point.y);
+            lineCanvasContext.stroke();
+          }
+        }
+        
+        /**
+         * @param {{x: number, y: number}} a
+         * @param {{x: number, y: number}} b
+         * @return {number} The distance between points a and b
+         */
+        function getDistanceBetween(a, b) {
+          return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
+        }
+        
+        /**
+         * Draws the original image, masked by the line drawn in drawLineToCanvas.
+         */
+        function drawImageCanvas() {
+          // Emulate background-size: cover
+          var width = imageCanvas.width;
+          var height = imageCanvas.width / image.naturalWidth * image.naturalHeight;
+          
+          if (height < imageCanvas.height) {
+            width = imageCanvas.height / image.naturalHeight * image.naturalWidth;
+            height = imageCanvas.height;
+          }
+        
+          imageCanvasContext.clearRect(0, 0, imageCanvas.width, imageCanvas.height);
+          imageCanvasContext.globalCompositeOperation = 'source-over';
+          imageCanvasContext.drawImage(image, 0, 0, width, height);
+          imageCanvasContext.globalCompositeOperation = 'destination-in';
+          imageCanvasContext.drawImage(lineCanvas, 0, 0);
+        }
+        </script>
+    </div>
+    <div class="col-5 profile">
+        <h2>PROFILE</h2>
+        
+        <div class="intro">
+                <img id="profPic" src="images/IMG_4492.JPG" alt="">
+            
+            <div class="profText">
+                <p>笠原　未来(かさはら　みく)<br><br>
+                2000年10月8日生まれ<br>
+                swift,Illustrator,デザインの修行中
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-5 illust">
+        <h2>MY ILLUSTRATION</h2>
+        
+        <div class="col-3 collection">
+            <div class="col-1 card-left">
+            <a href="./3Dtube.html" class="panel-item-left">
+               <img src="images/tube.png" alt="">
+               </a>
+                <h6 id="leftText">3D tube</h6>
+                <p id="leftText">created in adobe Illustrator</p>
+            </div>
+               
+            
+            <div class="col-1 card">
+               <a href="./geometricLine.html" class="panel-item">
+                <img src="images/geometryLine.png" alt="">
+                </a>
+                <h6 id="illustTitle">Geometric Line</h6>
+                <p>created in adobe  Illustrator</p>
+            </div>
+            <div class="col-1 card">
+               <a href="./3Dtube.html" class="panel-item">
+                <img src="images/brain.jpg" alt="">
+                </a>
+                <h6 id="illustTitle">Brain icon</h6>
+                <p>created in adobe Illustrator</p>
+            </div>
+        </div>
+        
+        <div class="col-3 collection">
+            <div class="col-1 card-left">
+               <a href="./3Dtube.html" class="panel-item-left">
+                <img src="images/GradientOrbs.jpg" alt="">
+                </a>
+                <h6 id="leftText">Gradient Orbs</h6>
+                <p id="leftText">created in adobe Illustrator</p>
+            </div>
+               
+            
+            <div class="col-1 card">
+               <a href="./3Dtube.html" class="panel-item">
+                <img src="images/_medama.jpg" alt="">
+                </a>
+                <h6 id="illustTitle">MEDAMAYAKI</h6>
+                <p>created in adobe Photoshop</p>
+            </div>
+            <div class="col-1 card">
+               <a href="./3Dtube.html" class="panel-item">
+                <img src="images/zara.jpg" alt="">
+                </a>
+                <h6 id="illustTitle">Twitter ID Poster</h6>
+                <p>created in adobe Illustrator</p>
+            </div>
+            
+        </div>
+        
+    </div>
+    <div class="col-5 SNS">
+        <h2>SNS</h2>
+          <div class="SNSIcon">
+              <div class="col-1">
+              <a href="https://twitter.com/G6NocdXUSBnTDYM">
+                  <img src="images/twiter.png" alt="">
+                   <p>@G6NocdXUSBnTDYM</p>
+              </a>
+           </div>
+           <div class="col-1 SNSIconPadding">
+              <a href="https://www.facebook.com/profile.php?id=100015805457815">
+                   <img src="images/facebook.png" alt="">
+                   <p>笠原　未来(ハラミ)</p>
+              </a>
+           </div>
+           <div class="col-1 SNSIconPadding">
+              <a href="">
+                  <img src="images/insta.png" alt="">
+               <p>@merry_1217_</p>
+              </a>
+          </div>
+           
+            
+    </div>
+  <footer>2018 Life is Tech! SpringCamp</footer>  
+</body>
+</html>
