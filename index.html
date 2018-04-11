@@ -11,7 +11,7 @@
     <div class="col-5 hero" id="polCanvas">
        <!-- <h3>profile and illustration</h3>
         <h1>MIKU KASAHARA</h1> -->
-        <img src="hero2_dark.jpg">
+        <img src="images/hero2_dark.jpg">
         <script type="text/javascript">
             var image = document.querySelector('img');
             var imageCanvas = document.createElement('canvas');
@@ -163,18 +163,31 @@
         
         <div class="col-3 collection">
             <div class="col-1 card-left">
-            <a href="./3Dtube.html" class="panel-item-left">
+            <a href="#modal-p01" class="panel-item-left">
                <img src="images/tube.png" alt="">
                </a>
-                <h6 id="leftText">3D tube</h6>
-                <p id="leftText">created in adobe Illustrator</p>
-            </div>
-               
+               <section class="modal-window" id="modal-p01">
+                <div class="modal-inner">
+                  <img src=images/tube.png>
+                  <h1>3D tube</h1>
+                </div>
+                <a href="#!" class="modal-close">&times;</a>
+                </section>
+                <h6>3D tube</h6>
+                <p>created in adobe Illustrator</p>
+            </div>        
             
             <div class="col-1 card">
-               <a href="./geometricLine.html" class="panel-item">
+               <a href="#modal-p01" class="panel-item">
                 <img src="images/geometryLine.png" alt="">
                 </a>
+                <section class="modal-window" id="modal-p01">
+                <div class="modal-inner">
+                  <img src=images/geometryLine.png>
+                  <h1>Geometric Line</h1>
+                </div>
+                <a href="#!" class="modal-close">&times;</a>
+                </section>
                 <h6 id="illustTitle">Geometric Line</h6>
                 <p>created in adobe  Illustrator</p>
             </div>

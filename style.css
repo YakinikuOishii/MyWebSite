@@ -96,7 +96,7 @@ body {
     height: 500px;
   /* 画像を呼び出すための[パス]はこのcssファイルを基準に設定します */
   /* background-image: url("images/polygon.png"); */
-    background: url(hero2.jpg) 0 0 / cover;
+    background: url(images/hero2.jpg) 0 0 / cover;
 /*    background-position: center center; */
     /* opacity: 0.8;
     display: none; */
@@ -155,7 +155,7 @@ body {
 /*}*/
 
 .illust {
-    height: 650px;
+    height: 700px;
     background-color: #EEEEEE;
 }
 
@@ -217,7 +217,7 @@ body {
 
 .card p {
     font-family: "Graphie";
-    font-size: 13px;
+    font-size: 16px;
 /*    padding-left: 30px;*/
     color: #757575;
 }
@@ -227,6 +227,20 @@ body {
     font-size: 14px;
     font-weight: 700;
 }
+
+.card-left p {
+    font-family: "Graphie";
+    font-size: 16px;
+/*    padding-left: 30px;*/
+    color: #757575;
+}
+
+.card-left h6 {
+    color: #424242;
+    font-size: 14px;
+    font-weight: 700;
+}
+
 
 /*
 #illustTitle {
@@ -367,4 +381,131 @@ footer {
     clear: both;
     content: "";
     
+}
+
+
+
+
+
+
+
+p a:hover {
+ background-color: #065686;
+ -webkit-transition: 0.7s;
+ -moz-transition: 0.7s;
+ -o-transition: 0.7s;
+ transition: 0.7s;
+}
+
+.modal-window {
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  opacity: 0;
+  line-height: 1.3;
+  display: none;
+}
+
+.modal-window:target {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.is-active.modal-window {
+  display: block;
+}
+
+.modal-window:target {
+display: block;
+}
+
+.modal-window .modal-inner {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  z-index: 20;
+  margin-left: -325px;
+  width: 450px;
+  overflow-x: hidden;
+  border-radius: 2px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.modal-window .modal-inner p {
+  padding: 0 20px;
+}
+
+.modal-window .modal-close {
+  display: block;
+  text-indent: -100px;
+  overflow: hidden;
+}
+
+.modal-window .modal-close:before {
+  content: '';
+    height: 200%;
+    opacity: 0.9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: #333;
+}
+
+.modal-window .modal-close:after {
+  content: '\00d7';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  z-index: 20;
+  margin-left: 97px;
+  background: #fff;
+  border-radius: 2px;
+  padding: 2px 8px;
+  font-size: 1.2em;
+  text-decoration: none;
+  text-indent: 0;
+ }
+
+.modal-window {
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.modal-inner {
+  position: relative;
+}
+
+.modal-inner h1 {
+  position: absolute;
+    text-align: left;
+  left: 50%;
+  top: 40%;
+  font-size: 4vw;
+  color: #fff;
+  font-weight: normal;
+}
+
+.modal-inner img {
+  width: 100%;
+  display; block;
 }
