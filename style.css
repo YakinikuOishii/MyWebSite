@@ -495,6 +495,7 @@ display: block;
   position: relative;
 }
 
+/*
 .modal-inner h1 {
   position: absolute;
     text-align: left;
@@ -504,6 +505,7 @@ display: block;
   color: #fff;
   font-weight: normal;
 }
+*/
 
 .modal-inner img {
   width: 100%;
