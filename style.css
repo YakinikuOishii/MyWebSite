@@ -509,3 +509,15 @@ display: block;
   width: 100%;
   display; block;
 }
+
+#modal-p01: target,
+#modal-p02: target,
+#modal-p03: target,
+#modal-p04: target,
+#modal-p05: target,
+#modal-p06: target,{
+    opacity: 1;
+  -webkit-transform: translate(0,0);
+  -ms-transform: translate(0,0);
+  transform: translate(0,0);
+}
